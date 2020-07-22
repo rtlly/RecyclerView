@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.recyclerview.Data.TYPE_HEADER;
+import static com.example.recyclerview.Data.TYPE_ITEM;
+
 public class ListActivity extends AppCompatActivity {
 
     @Override
@@ -29,9 +32,16 @@ public class ListActivity extends AppCompatActivity {
         List<Data> dataSet = new ArrayList<>();
         String title = "title";
         String desp = "desp";
-        for(int i = 1; i < 16; ++i) {
+        for(int i = 0; i < 16; ++i) {
+            int type = TYPE_ITEM;
             String number = String.valueOf(i);
-            Data data = new Data(title.concat(number), desp.concat(number), i);
+            if (i == 0) {
+                type = TYPE_HEADER;
+                Data data = new Data("This is header", null, i, type);
+                dataSet.add(data);
+                continue;
+            }
+            Data data = new Data(title.concat(number), desp.concat(number), i, type);
             dataSet.add(data);
         }
 
