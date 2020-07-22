@@ -8,12 +8,14 @@ public class Data {
     private String description;
     private int number;
     private int type;
+    private String avatar;
 
-    public Data(String title, String description, int number, int type) {
+    public Data(String title, String description, int number, int type, String avatar) {
         this.title = title;
         this.description = description;
         this.number = number;
         this.type = type;
+        this.avatar = avatar;
     }
 
     public String getTitle() {
@@ -46,5 +48,13 @@ public class Data {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }
